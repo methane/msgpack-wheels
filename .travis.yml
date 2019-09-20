@@ -89,13 +89,11 @@ install:
 script:
     - install_run $PLAT
 
-      #after_success:
-      #    # Upload wheels to Rackspace container
-      #    - pip install wheelhouse-uploader
-      #    # This uploads the wheels to a Rackspace container owned by the
-      #    # scikit-learn team, available at http://wheels.scipy.org.  See above
-      #    # for information on using this account or choosing another.
-      #    - python -m wheelhouse_uploader upload --local-folder
-      #        ${TRAVIS_BUILD_DIR}/wheelhouse/
-      #        --no-update-index
-      #        wheels
+deploy:
+  provider: releases
+  api_key:
+    secure: d//pM6zM7TorVHWaw7Tv/RQK/O5kgdPd6da9m1/VpQk+YPAPVy8giqOwj9moen+YCgqh21FORsXK9HuZ76xWvgQ6uIwgn84W4kXgnq2wU7j6TnB4tYEJ+ZLIE7dNTHWi8eecoi6EI/iVIbSpJuDXnM/OKoT9UHwZv1yRYC7xoH+lBWtxYuPwF6RvO2OqK12htkAUGrMEe3LECMh6pm89Q9+zOhKmdeqKCxHuhzSr90gT97vk9Dzp7iMSkYUgTuarBOWVKYL0PQoKWf5RjJMCdWtw192JMbgXEnqVsHbEbL5NsqogUAJXnmxwka39jxe+E5RsN17E9QSJq3QR7glPaQl7i0W92jtzWd7SbnLwLhWisnPe7eIeiQiW2E56xYp4utNfNOcQq1W1TzxVncEuoK8ilcGmdUyvms2FZK6nNTxp8QpOf566M/H7BWvUli8EyrwgEYqQXXU/KHL4Tqb017tNlkCiLvEFyhqnHjABddto0sXUgz/eBHBTTv/8pMqJfzlQRQdflmvTUD2yRcf9rzNMHPAwYv67rS7PuHdHK0krM+n9WDwnro+L4emwRLrqYdhS7ijzCO5A/nSaTwAnIkX1KcR5LQRl+DWAlTxRl3mh4OQdZ7122D2CYFnytuc4I6qIAPhjx3VH2jFDL2IZubBjqAOZDPsoprY5Qw4Zy/0=
+  file_glob: true
+  file: wheelhouse/*.whl
+  on:
+    repo: methane/msgpack-wheels
