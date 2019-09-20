@@ -1,6 +1,6 @@
 function pre_build {
     cd $REPO_DIR
-    make cython
+    pip install -r requirements.txt
 }
 
 function run_tests {
