@@ -1,9 +1,12 @@
 function pre_build {
-    cd $REPO_DIR
+    pushd $REPO_DIR
     pip install -r requirements.txt
+    make cython
+    popd
 }
 
 function run_tests {
-    cd $REPO_DIR
+    pushd $REPO_DIR
     make test
+    popd
 }
