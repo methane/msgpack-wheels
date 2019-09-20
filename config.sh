@@ -6,7 +6,5 @@ function pre_build {
 }
 
 function run_tests {
-    pushd $REPO_DIR
     make test
-    popd
 }
