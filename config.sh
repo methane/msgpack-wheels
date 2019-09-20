@@ -6,5 +6,6 @@ function pre_build {
 }
 
 function run_tests {
-    make test
+    pwd
+    ls
 }
