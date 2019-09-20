@@ -1,0 +1,6 @@
+[submodule "multibuild"]
+	path = multibuild
+	url = https://github.com/matthew-brett/multibuild.git
+[submodule "msgpack-python"]
+	path = msgpack-python
+	url = https://github.com/msgpack/msgpack-python
